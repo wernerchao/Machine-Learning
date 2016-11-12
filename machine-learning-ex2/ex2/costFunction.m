@@ -20,19 +20,23 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-for iter = 1:1
-
-z = X * theta;
-h_theta_X = sigmoid(z);
-error = (h_theta_X - y) .* X;
-sum_all = sum(error)/m; % 100 training sets
-theta = theta - (alpha * sum_all); %theta becomes 3 x 3 matrix after minus itself?
-
-% J = -1 * sum((y .* log(sigmoid(X * theta))) + ((1 - y) .* log(1-sigmoid(X * theta)))) / m;
-J = theta;
-grad = theta;
-
-end
+% for iter = 1:1
+% 
+% z = X * theta;
+% h_theta_X = sigmoid(z);
+% error = (h_theta_X - y) .* X;
+% sum_all = sum(error)/m; % 100 training sets
+% temp_theta = (alpha * sum_all); %theta becomes 3 x 3 matrix after minus itself?
+% something = temp_theta - theta;
+% 
+% % J = -1 * sum((y .* log(sigmoid(X * theta))) + ((1 - y) .* log(1-sigmoid(X * theta)))) / m;
+% J = something;
+% grad = temp_theta;
+% 
+% end
 % =============================================================
+hypo = sigmoid(X * theta);
+J = sum(-y .* log(hypo) - (1-y) .* log(1-hypo))/m;
+grad = X' * (hypo - y) / m;
 
 end
