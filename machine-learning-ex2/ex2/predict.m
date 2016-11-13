@@ -15,11 +15,15 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
+% if sigmoid(X * theta) >= 0.5
+%     p = 1;
+% else
+%     p = 0;
+% end
 
+p = sigmoid(X * theta) >= 0.5;
 
-
-
-
+% fprintf('p = %f\n', p);
 
 % =========================================================================
 
