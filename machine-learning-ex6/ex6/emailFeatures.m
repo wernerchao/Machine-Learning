@@ -48,12 +48,22 @@ x = zeros(n, 1);
 %
 %
 
+% vocabList = getVocabList();
+% 
+% for i = 1:length(vocabList)
+%     for j = 1:length(word_indices)
+%         if i == word_indices(j)
+%             x(i) = 1;
+%         else
+%             x(i) = 0;
+%         end
+%     end
+% end
 
-
-
-
-
-
+for i = word_indices
+    x(i) = 1;
+end
+disp(x);
 
 % =========================================================================
     

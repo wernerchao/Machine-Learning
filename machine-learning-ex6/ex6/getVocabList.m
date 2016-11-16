@@ -21,5 +21,5 @@ for i = 1:n
     vocabList{i} = fscanf(fid, '%s', 1);
 end
 fclose(fid);
-
+disp(vocabList);
 end
