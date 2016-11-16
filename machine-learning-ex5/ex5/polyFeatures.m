@@ -13,12 +13,19 @@ X_poly = zeros(numel(X), p);
 % Instructions: Given a vector X, return a matrix X_poly where the p-th 
 %               column of X contains the values of X to the p-th power.
 %
-% 
+%
 
 
+for i = 2:p
 
+%   X_poly = [X X.^2 X.^3 X.^4]
+    X_temp = (X .^ i);
+    X_poly(:, i) = (X_temp);
 
+end
 
+X_poly(:, 1) = X;
+disp(X_poly);
 
 % =========================================================================
 
