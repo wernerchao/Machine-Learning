@@ -23,10 +23,11 @@ sigma2 = zeros(n, 1);
 
 
 
-mu = sum(X) / m;
-temp = ones(m, 1);
-sigma2 = sum((X - temp*mu).^2) / m;
+mu_temp = sum(X) / m;
+sigma2_temp = sum((X - mu_temp).^2) / m;
 
+mu = mu_temp';
+sigma2 = sigma2_temp';
 
 
 
