@@ -23,9 +23,9 @@ sigma2 = zeros(n, 1);
 
 
 
-
-
-
+mu = sum(X) / m;
+temp = ones(m, 1);
+sigma2 = sum((X - temp*mu).^2) / m;
 
 
 
