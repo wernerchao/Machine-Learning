@@ -40,11 +40,19 @@ Theta_grad = zeros(size(Theta));
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
+
 hypo = X * Theta';
 cost = sum(sum(((hypo - Y).^2) .* R)) / 2;
 
 J = cost;
 
+X_grad = ((hypo - Y) .* R * Theta) + (lambda * X);
+Theta_grad = ((hypo - Y) .* R)' * X + (lambda * Theta);
+
+regularized_1 = (lambda/2) * sum(sum(Theta.^2));
+regularized_2 = (lambda/2) * sum(sum(X.^2));
+
+J = cost + regularized_1 + regularized_2;
 
 % =============================================================
 
