@@ -34,25 +34,16 @@ Theta_grad = zeros(size(Theta));
 %
 % You should set the following variables correctly:
 %
-%        X_grad - num_movies x num_features matrix, containing the 
+%        X_grad - num_movies * num_features matrix, containing the 
 %                 partial derivatives w.r.t. to each element of X
 %        Theta_grad - num_users x num_features matrix, containing the 
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
+hypo = X * Theta';
+cost = sum(sum(((hypo - Y).^2) .* R)) / 2;
 
-
-
-
-
-
-
-
-
-
-
-
-
+J = cost;
 
 
 % =============================================================
